@@ -7,28 +7,11 @@
 // Date:    01/22/17                                                //
 //------------------------------------------------------------------//
 
-/**
- * Sample Board
- * <p/>
- * 0   1   2   3
- * 0   -   -   -   -
- * 1   -   -   -   -
- * 2   -   -   -   -
- * 3   -   -   -   -
- * <p/>
- * The sample board shows the index values for the columns and rows
- * Remember that you access a 2D array by first specifying the row
- * and then the column: grid[row][column]
- */
-
-
-
 /*
  * Name: Angelynne Pawaan
  * Login: cs8bwadr
  * Date:  February 6th, 2017
  * File:  Board.java
- * Sources of Help: Textbook, tutors, piazza, discussion
  * Board.java contains Board contructors
  * for a new board and loads a saved board. 
  * It also contains the saveBoard method which allows the player
@@ -37,7 +20,6 @@
  * tile after each move in game.
  * Contains flip method which flips the current board
  * into a variety of directions depending on the user's input
- * 
  */
 
 
@@ -159,8 +141,7 @@ public class Board {
 	}
        }	       
       }
-     }
-        
+     } 
     }
 
     // Flip the board horizontally or vertically,
@@ -220,7 +201,7 @@ public class Board {
         grid[row][col] = gridVal.get(gridInd);
 	gridInd++;
        }
-     }
+      }
      }
   
      // method for counterclockwise rotation flip
@@ -248,7 +229,7 @@ public class Board {
         grid[row][col] = gridVal2.get(gridInd2);
 	gridInd2++;
        }
-     }
+      }
      }
     }
 
@@ -392,21 +373,22 @@ public class Board {
      // shifts board first
      for (int shiftCount = 0; shiftCount < GRID_SIZE; shiftCount++)
      {     
-     int temp = 0;
+      int temp = 0;
 
-     for (int row = 0; row < GRID_SIZE; row++)
-     {
-      for (int col = 1; col < GRID_SIZE; col++)
-      { 
-       if (grid[row][col - 1] == 0)
-       {
-	grid[row][col - 1] = temp;
-	grid[row][col - 1] = grid[row][col];
-	grid[row][col] = temp;
+      for (int row = 0; row < GRID_SIZE; row++)
+      {
+       for (int col = 1; col < GRID_SIZE; col++)
+       { 
+        if (grid[row][col - 1] == 0)
+        {
+	 grid[row][col - 1] = temp;
+	 grid[row][col - 1] = grid[row][col];
+	 grid[row][col] = temp;
+        }
        }
-       }
+      }
      }
-     }
+	    
      // combine board
      int count;
      for (int row = 0; row < GRID_SIZE; row++)
@@ -430,22 +412,21 @@ public class Board {
      // shift again to make sure all tiles are at desired area
      for (int shiftCount = 0; shiftCount < GRID_SIZE; shiftCount++)
      {     
-     int temp = 0;
+      int temp = 0;
 
-     for (int row = 0; row < GRID_SIZE; row++)
-     {
-      for (int col = 1; col < GRID_SIZE; col++)
-      { 
-       if (grid[row][col - 1] == 0)
-       {
-	grid[row][col - 1] = temp;
-	grid[row][col - 1] = grid[row][col];
-	grid[row][col] = temp;
+      for (int row = 0; row < GRID_SIZE; row++)
+      {
+       for (int col = 1; col < GRID_SIZE; col++)
+       { 
+        if (grid[row][col - 1] == 0)
+        {
+	 grid[row][col - 1] = temp;
+	 grid[row][col - 1] = grid[row][col];
+	 grid[row][col] = temp;
+        }
        }
-       }
+      }
      }
-     }
-
     }
 
     private void moveRight()
